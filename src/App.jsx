@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <nav className="p-4">
@@ -19,6 +17,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
