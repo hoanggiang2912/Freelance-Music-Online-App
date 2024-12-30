@@ -1,20 +1,17 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
 import About from "./pages/About";
+import RootLayout from "./layouts/RootLayout";
 
 const App = () => {
   return (
     <Router>
-      <nav className="p-4">
-        <Link to="/" className="mr-4">
-          Home
-        </Link>
-        <Link to="/about">About</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <RootLayout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </RootLayout>
     </Router>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Menu, Icon } from "antd";
+import { Button, Menu } from "antd";
 import SubMenu from "antd/es/menu/SubMenu";
 
 function Sidebar() {
@@ -10,8 +10,9 @@ function Sidebar() {
   };
 
   return (
-    <div style={{ width: 256 }}>
-      <Button
+    <div className="w-[80px] h-[400px] bg-secondary fixed top-0 left-0 z-20 shadow-[0_0_24px_6px_#04040433]">
+      <span className="!text-white">SIDE BAR</span>
+      {/* <Button
         type="primary"
         onClick={toggleCollapsed}
         style={{ marginBottom: 16 }}
@@ -67,7 +68,7 @@ function Sidebar() {
             <Menu.Item key="12">Option 12</Menu.Item>
           </SubMenu>
         </SubMenu>
-      </Menu>
+      </Menu> */}
     </div>
   );
 }
