@@ -11,6 +11,7 @@ import Logo from './Logo';
 import DownloadsIcon from '../components/icons/DownloadsIcon';
 import FavoritesIcon from '../components/icons/FavoritesIcon';
 import HistoryIcon from '../components/icons/HistoryIcon';
+import { Link } from 'react-router-dom';
 
 const topItems = [
   {
@@ -20,7 +21,7 @@ const topItems = [
         <DiscoverIcon />
       </div>
     ),
-    label: 'Discover',
+    label: <Link to="/discover">Discover</Link>,
   },
   {
     key: 'albums',
@@ -29,7 +30,7 @@ const topItems = [
         <AlbumsIcon />
       </div>
     ),
-    label: 'Albums',
+    label: <Link to="/albums">Albums</Link>,
   },
   {
     key: 'artists',
@@ -38,7 +39,7 @@ const topItems = [
         <ArtistsIcon />
       </div>
     ),
-    label: 'Artists',
+    label: <Link to="/artists">Artists</Link>,
   },
   {
     key: 'genres',
@@ -47,7 +48,7 @@ const topItems = [
         <GenresIcon />
       </div>
     ),
-    label: 'Genres',
+    label: <Link to="/genres">Genres</Link>,
   },
   {
     key: 'topTracks',
@@ -56,7 +57,7 @@ const topItems = [
         <TopTracksIcons />
       </div>
     ),
-    label: 'Top Tracks',
+    label: <Link to="/top-tracks">Top Tracks</Link>,
   },
 ];
 
@@ -68,7 +69,7 @@ const bottomItems = [
         <DownloadsIcon />
       </div>
     ),
-    label: 'Downloads',
+    label: <Link to="/downloads">Downloads</Link>,
   },
   {
     key: 'favourites',
@@ -77,7 +78,7 @@ const bottomItems = [
         <FavoritesIcon />
       </div>
     ),
-    label: 'Favourites',
+    label: <Link to="/favorites">Favourites</Link>,
   },
   {
     key: 'history',
@@ -86,7 +87,7 @@ const bottomItems = [
         <HistoryIcon />
       </div>
     ),
-    label: 'History',
+    label: <Link to="/history">History</Link>,
   },
 ];
 
