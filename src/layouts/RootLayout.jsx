@@ -381,7 +381,7 @@ function RootLayout({ children }) {
       <div
         className={`popupLoginRegister ${
           openPopup ? '' : 'loginRegisteContainerHidden'
-        } w-full h-full bg-[#0C0E1ACC] fixed top-0 left-0 z-20 flex justify-center items-center`}
+        } w-full h-full bg-[#0C0E1ACC] fixed top-0 left-0 z-[999] flex justify-center items-center`}
         onClick={() => {
           setOpenPopup(false);
         }}
