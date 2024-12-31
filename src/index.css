@@ -31,6 +31,15 @@ body {
   font-family: 'Josefin Sans', serif;
 }
 
+.popupLoginRegister {
+  transition: all 0.3s ease-in-out;
+}
+
+.loginRegisteContainerHidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .font-sans {
   font-family: 'Josefin Sans', serif;
 }
@@ -39,10 +48,12 @@ body {
 .slick-track {
   display: flex !important;
   align-items: center !important;
+  /* gap: 30px !important; */
 }
 
 .slick-slide {
   margin-right: 30px;
+  /* width: 175px !important; */
 }
 
 .slick-arrow.slick-prev {

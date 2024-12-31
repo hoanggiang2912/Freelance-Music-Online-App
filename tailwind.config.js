@@ -26,6 +26,10 @@ export default {
       dropShadow: {
         sidebar: '0px 0px 24px 6px #04040433',
       },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(0deg, #14182A 0%, #343E69 0%, rgba(32, 167, 196, 0) 100%)",
+      },
     },
   },
   variants: {

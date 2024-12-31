@@ -18,12 +18,13 @@ const SliderComponent = ({ dataSlider, name, link }) => {
       </div>
       <div>
         <Carousel
-          autoplay={true}
+          autoplay={false}
           dots={false}
           draggable={true}
           arrows={true}
           slidesToShow={6}
           slidesToScroll={3}
+          infinite={true}
         >
           {dataSlider.map((item) => (
             <ItemSliderComponent

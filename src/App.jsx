@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import About from './pages/About';
 import RootLayout from './layouts/RootLayout';
+import Albums from './pages/Albums';
+import Artists from './pages/Artists';
 import Genres from './pages/Genres';
 import GenresViewMore from './pages/Genres-ViewMore';
 import TopTracks from './pages/TopTracks';
@@ -15,6 +17,8 @@ const App = () => {
       <RootLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/albums" element={<Albums />} />
+          <Route path="/artists" element={<Artists />} />
           <Route path="/about" element={<About />} />
           <Route path="/genres" element={<Genres />} />
           <Route path="/genres/view-more" element={<GenresViewMore />} />

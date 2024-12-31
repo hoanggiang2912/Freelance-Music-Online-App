@@ -92,7 +92,7 @@ const bottomItems = [
 ];
 
 const App = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
