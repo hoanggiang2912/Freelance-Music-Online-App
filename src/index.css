@@ -1,7 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #3bc8e7;
+    --secondary: #252b4d;
+    --tertiary: #161a2d;
+    --quaternary: #f1f1f1;
+  }
+}
+
 @layer utilities {
   .custom-border {
     border-style: solid;
@@ -18,8 +28,33 @@
 }
 
 body {
-  font-family: "Josefin Sans", serif;
+  font-family: 'Josefin Sans', serif;
 }
+
+.font-sans {
+  font-family: 'Josefin Sans', serif;
+}
+
+/* slick custom */
+.slick-track {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.slick-slide {
+  margin-right: 30px;
+}
+
+.slick-arrow.slick-prev {
+  left: -20px;
+}
+
+.slick-arrow.slick-next {
+  right: -20px;
+}
+
+/* Custom Scrollbar */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -37,18 +72,20 @@ body {
   background: #1b2039;
 }
 
-.loginRegisteContainerHidden {
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease-in-out;
+/* utilities */
+.line-track {
+  border: 2px solid var(--secondary);
+  box-shadow: 0px 0px 10px 0px #161a2d45;
 }
+
 .ant-carousel .slick-prev {
-  margin-left: -40px;
+  margin-left: -20px;
   font-size: 20px;
   color: white;
 }
+
 .ant-carousel .slick-next {
-  margin-right: -40px;
+  margin-right: -20px;
   font-size: 20px;
   color: white;
 }
@@ -57,6 +94,7 @@ body {
   display: flex;
   /* gap: 30px; */
 }
+
 #item-carosel {
   width: 100%;
 }
@@ -64,23 +102,27 @@ body {
 .ant-steps-item {
   width: 25%;
 }
+
 .ant-steps-item-tail {
   margin-inline: 0 !important;
   display: block !important;
 }
+
 .ant-steps-item-tail::after {
-  background-color: #252b4dbf !important;
+  background-color: var(--secondary) !important;
   width: 100%;
 }
+
 .ant-steps-icon-dot {
-  background: #252b4dbf !important;
-  border: 2px solid #3bc8e7 !important;
+  background: var(--secondary) !important;
+  border: 2px solid var(--primary) !important;
   width: 10px !important;
   height: 10px !important;
   top: 50%;
   transform: translateY(-40%);
   transition: 0.3s ease-in-out;
 }
+
 .ant-steps-item-active .ant-steps-icon-dot {
   border-color: white !important;
 }
@@ -90,6 +132,7 @@ body {
   visibility: hidden;
   transition: 0.3s ease-in-out;
 }
+
 .ant-steps-item-active #image-cover-step {
   opacity: 1;
   visibility: visible;
@@ -100,6 +143,50 @@ body {
   display: flex;
   justify-content: flex-start;
 }
+
 .ant-steps-item-tail {
-  background-color: #252b4dbf;
+  background-color: var(--secondary);
+}
+
+/* Button */
+.btn-primary:hover {
+  box-shadow: 0px 0px 20px 0px var(--primary);
+}
+
+/* antd menu customization */
+.ant-menu-item {
+  padding: 8px 14px !important;
+  display: flex !important;
+  gap: 16px !important;
+  border-radius: 0 !important;
+  color: white !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+.ant-menu-item::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background-color: var(--secondary);
+}
+
+.ant-menu-item-selected {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+
+.ant-menu-item-selected a {
+  color: white !important;
+}
+
+.sidebar-collapsed .ant-menu-item {
+  justify-content: center !important;
+}
+
+.sidebar-collapsed .ant-menu-title-content {
+  display: none !important;
 }

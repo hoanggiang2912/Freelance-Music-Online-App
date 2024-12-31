@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Avatar, Card, Col, Row, Steps, Timeline } from "antd";
-import { Link } from "react-router-dom";
+import { Steps } from 'antd';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const { Step } = Steps;
 const NewRelasesComponent = ({ data, name, link }) => {
@@ -9,7 +9,7 @@ const NewRelasesComponent = ({ data, name, link }) => {
   const handleStepClick = (index) => {
     setCurrent(index);
   };
-  if (!data) return "Chưa có data!";
+  if (!data) return 'Chưa có data!';
   return (
     <div className="flex flex-col gap-8">
       <div className="w-full flex justify-between">
@@ -26,11 +26,11 @@ const NewRelasesComponent = ({ data, name, link }) => {
           progressDot
           direction="horizontal"
           style={{
-            display: "flex",
-            justifyContent: "center",
-            overflowX: "auto",
-            whiteSpace: "nowrap",
-            padding: "10px 0",
+            display: 'flex',
+            justifyContent: 'center',
+            overflowX: 'auto',
+            whiteSpace: 'nowrap',
+            padding: '10px 0',
           }}
         >
           {data.map((item, index) => (
@@ -38,7 +38,7 @@ const NewRelasesComponent = ({ data, name, link }) => {
               key={item.id}
               title={
                 <div
-                  className="flex w-full gap-5 py-1 cursor-pointer"
+                  className="flex w-full gap-5 py-1 cursor-pointer mr-10"
                   onClick={() => handleStepClick(index)}
                 >
                   <div className="w-[50px] h-[50px] rounded-md overflow-hidden relative">
@@ -47,12 +47,11 @@ const NewRelasesComponent = ({ data, name, link }) => {
                       src={item.image}
                       alt=""
                     />
-                    <div id="image-cover-step" className="flex justify-center items-center w-full h-full absolute top-0 left-0 z-10 bg-[#000000B2]">
-                      <img
-                        className=""
-                        src="/images/Component 4.png"
-                        alt=""
-                      />
+                    <div
+                      id="image-cover-step"
+                      className="flex justify-center items-center w-full h-full absolute top-0 left-0 z-10 bg-[#000000B2]"
+                    >
+                      <img className="" src="/images/Component 4.png" alt="" />
                     </div>
                   </div>
                   <div className="flex flex-col items-start">
