@@ -37,6 +37,11 @@ body {
   background: #1b2039;
 }
 
+.loginRegisteContainerHidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
 .ant-carousel .slick-prev {
   margin-left: -40px;
   font-size: 20px;

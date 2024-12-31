@@ -15,6 +15,10 @@ export default {
         gradient:
           "linear-gradient(270deg, #252B4D 0%, #252B4D 50%, #161A2D 100%)",
       },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(0deg, #14182A 0%, #343E69 0%, rgba(32, 167, 196, 0) 100%)",
+      },
     },
   },
   variants: {

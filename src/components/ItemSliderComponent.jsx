@@ -1,9 +1,9 @@
 import { Col } from "antd";
 import React from "react";
 
-const ItemSliderComponent = ({ data }) => {
+const ItemSliderComponent = ({ data, className }) => {
   return (
-    <div className="text-white flex flex-col" id="item-carosel">
+    <div className={`text-white flex flex-col ${className}`} id="item-carosel">
       <div className="rounded-xl overflow-hidden h-[175px] w-[175px]">
         <img className="w-full h-full object-cover" src={data?.image} alt="" />
       </div>
