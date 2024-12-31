@@ -1,8 +1,9 @@
 import { Carousel } from 'antd';
 import Song from '../components/Song';
 import TrackItem from '../components/TrackItem';
-import { carouselData, carouselSetting } from '../data/carouselData';
+import { carouselData, carouselSetting, songs } from '../data/carouselData';
 import Main from '../layouts/Main';
+import NewRelasesComponent from '../components/NewRelasesComponent';
 
 function TopTracks() {
   return (
@@ -20,9 +21,9 @@ function TopTracks() {
             <TrackItem key={index} item={item} />
           ))}
         </Carousel>
-      </Main>
-      <Main title={'Trending Track'}>
-        <div className="line-track"></div>
+        <div className="mt-8">
+          <NewRelasesComponent name={'Trending Track'} data={songs} />
+        </div>
       </Main>
     </>
   );

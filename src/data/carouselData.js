@@ -100,4 +100,94 @@ const genres = [
   },
 ];
 
-export { carouselData, carouselSetting, genres };
+const songs = [
+  {
+    id: 1,
+    title: 'Dream Your Moments',
+    artist: 'Arijit Singh',
+    image: '../../public/genres/hiphop.jpg',
+    duration: '3:45',
+  },
+  {
+    id: 2,
+    title: 'Dream Your Moments',
+    artist: 'Arijit Singh',
+    image: '../../public/genres/hiphop.jpg',
+    duration: '3:45',
+  },
+  {
+    id: 3,
+    title: 'Dream Your Moments',
+    artist: 'Arijit Singh',
+    image: '../../public/genres/hiphop.jpg',
+    duration: '3:45',
+  },
+  {
+    id: 4,
+    title: 'Dream Your Moments',
+    artist: 'Arijit Singh',
+    image: '../../public/genres/hiphop.jpg',
+    duration: '3:45',
+  },
+];
+
+const freeDownloads = [
+  {
+    index: 1,
+    title: 'Daydreamer',
+    album: '19',
+    duration: '3:45',
+    favourites: true,
+  },
+  {
+    index: 2,
+    title: 'Hometown Glory',
+    album: '19',
+    duration: '3:45',
+    favourites: false,
+  },
+  {
+    index: 3,
+    title: 'Best For Last',
+    album: '19',
+    duration: '3:45',
+    favourites: false,
+  },
+  {
+    index: 4,
+    title: 'Chasing Pavements',
+    album: '19',
+    duration: '3:45',
+    favourites: false,
+  },
+  {
+    index: 5,
+    title: 'Cold Shoulder',
+    album: '19',
+    duration: '3:45',
+    favourites: true,
+  },
+  {
+    index: 6,
+    title: 'Crazy For You',
+    album: '19',
+    duration: '3:45',
+    favourites: false,
+  },
+  {
+    index: 7,
+    title: 'Melt My Heart To Stone',
+    album: '19',
+    duration: '3:45',
+    favourites: true,
+  },
+  {
+    index: 8,
+    title: 'First Love',
+    album: '19',
+    duration: '3:45',
+    favourites: true,
+  },
+];
+
+export { carouselData, carouselSetting, genres, songs, freeDownloads };

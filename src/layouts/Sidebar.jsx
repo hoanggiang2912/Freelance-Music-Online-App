@@ -1,76 +1,133 @@
-import React from "react";
-import { Button, Menu } from "antd";
-import SubMenu from "antd/es/menu/SubMenu";
+import { ContainerOutlined, DesktopOutlined } from '@ant-design/icons';
+import { Button, Menu, Space } from 'antd';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import DiscoverIcon from '../components/icons/DiscoverIcon';
+import AlbumsIcon from '../components/icons/AlbumsIcon';
+import ArtistsIcon from '../components/icons/ArtistsIcon';
+import GenresIcon from '../components/icons/GenresIcon';
+import TopTracksIcons from '../components/icons/TopTracksIcons';
+import Logo from './Logo';
+import DownloadsIcon from '../components/icons/DownloadsIcon';
+import FavoritesIcon from '../components/icons/FavoritesIcon';
+import HistoryIcon from '../components/icons/HistoryIcon';
 
-function Sidebar() {
-  const [collapsed, setCollapsed] = React.useState(false);
+const topItems = [
+  {
+    key: 'discover',
+    icon: (
+      <div className="w-6 h-6 flex items-center justify-center">
+        <DiscoverIcon />
+      </div>
+    ),
+    label: 'Discover',
+  },
+  {
+    key: 'albums',
+    icon: (
+      <div className="w-6 h-6 flex items-center justify-center">
+        <AlbumsIcon />
+      </div>
+    ),
+    label: 'Albums',
+  },
+  {
+    key: 'artists',
+    icon: (
+      <div className="w-6 h-6 flex items-center justify-center">
+        <ArtistsIcon />
+      </div>
+    ),
+    label: 'Artists',
+  },
+  {
+    key: 'genres',
+    icon: (
+      <div className="w-6 h-6 flex items-center justify-center">
+        <GenresIcon />
+      </div>
+    ),
+    label: 'Genres',
+  },
+  {
+    key: 'topTracks',
+    icon: (
+      <div className="w-6 h-6 flex items-center justify-center">
+        <TopTracksIcons />
+      </div>
+    ),
+    label: 'Top Tracks',
+  },
+];
 
+const bottomItems = [
+  {
+    key: 'downloads',
+    icon: (
+      <div className="w-6 h-6 flex items-center justify-center">
+        <DownloadsIcon />
+      </div>
+    ),
+    label: 'Downloads',
+  },
+  {
+    key: 'favourites',
+    icon: (
+      <div className="w-6 h-6 flex items-center justify-center">
+        <FavoritesIcon />
+      </div>
+    ),
+    label: 'Favourites',
+  },
+  {
+    key: 'history',
+    icon: (
+      <div className="w-6 h-6 flex items-center justify-center">
+        <HistoryIcon />
+      </div>
+    ),
+    label: 'History',
+  },
+];
+
+const App = () => {
+  const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
-
   return (
-    <div className="w-[80px] h-[400px] bg-secondary fixed top-0 left-0 z-20 shadow-[0_0_24px_6px_#04040433]">
-      <span className="!text-white">SIDE BAR</span>
-      {/* <Button
-        type="primary"
+    <div
+      className={`h-screen fixed left-0 top-0 z-30 bg-secondary ${
+        collapsed ? 'w-20 sidebar-collapsed' : 'w-64'
+      } transition-all duration-300 drop-shadow-sidebar sidebar-wrapper`}
+    >
+      <Button
+        className="bg-secondary text-white aspect-square rounded-full w-10 h-10 flex items-center justify-center hover:!bg-secondary hover:brightness-90 hover:!text-white transition !p-0 absolute top-1/2 -right-4 z-40 border-none drop-shadow-sidebar"
         onClick={toggleCollapsed}
-        style={{ marginBottom: 16 }}
       >
-        <Icon type={collapsed ? "menu-unfold" : "menu-fold"} />
+        {collapsed ? (
+          <ChevronRight className="w-4 h-4" />
+        ) : (
+          <ChevronLeft className="w-4 h-4" />
+        )}
       </Button>
+      <Logo full={!collapsed} />
       <Menu
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
         mode="inline"
         theme="dark"
         inlineCollapsed={collapsed}
-      >
-        <Menu.Item key="1">
-          <Icon type="pie-chart" />
-          <span>Option 1</span>
-        </Menu.Item>
-        <Menu.Item key="2">
-          <Icon type="desktop" />
-          <span>Option 2</span>
-        </Menu.Item>
-        <Menu.Item key="3">
-          <Icon type="inbox" />
-          <span>Option 3</span>
-        </Menu.Item>
-        <SubMenu
-          key="sub1"
-          title={
-            <span>
-              <Icon type="mail" />
-              <span>Navigation One</span>
-            </span>
-          }
-        >
-          <Menu.Item key="5">Option 5</Menu.Item>
-          <Menu.Item key="6">Option 6</Menu.Item>
-          <Menu.Item key="7">Option 7</Menu.Item>
-          <Menu.Item key="8">Option 8</Menu.Item>
-        </SubMenu>
-        <SubMenu
-          key="sub2"
-          title={
-            <span>
-              <Icon type="appstore" />
-              <span>Navigation Two</span>
-            </span>
-          }
-        >
-          <Menu.Item key="9">Option 9</Menu.Item>
-          <Menu.Item key="10">Option 10</Menu.Item>
-          <SubMenu key="sub3" title="Submenu">
-            <Menu.Item key="11">Option 11</Menu.Item>
-            <Menu.Item key="12">Option 12</Menu.Item>
-          </SubMenu>
-        </SubMenu>
-      </Menu> */}
+        items={topItems}
+        className="py-10 bg-secondary"
+      />
+      <Space />
+      <Menu
+        mode="inline"
+        theme="dark"
+        inlineCollapsed={collapsed}
+        items={bottomItems}
+        className="py-10 bg-secondary"
+      />
     </div>
   );
-}
-
-export default Sidebar;
+};
+export default App;

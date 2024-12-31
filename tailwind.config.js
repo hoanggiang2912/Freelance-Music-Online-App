@@ -16,6 +16,21 @@ export default {
         borderLinear:
           'linear-gradient(270deg, #252B4D 0%, #252B4D 50%, #161A2D 100%);',
       },
+      width: {
+        widthDesktop: '1200px',
+      },
+      borderImage: {
+        gradient:
+          'linear-gradient(270deg, #252B4D 0%, #252B4D 50%, #161A2D 100%)',
+      },
+      dropShadow: {
+        sidebar: '0px 0px 24px 6px #04040433',
+      },
+    },
+  },
+  variants: {
+    extend: {
+      borderImage: ['responsive', 'hover', 'focus'],
     },
   },
   plugins: [],

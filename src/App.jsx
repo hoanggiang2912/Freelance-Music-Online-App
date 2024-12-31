@@ -5,6 +5,9 @@ import RootLayout from './layouts/RootLayout';
 import Genres from './pages/Genres';
 import GenresViewMore from './pages/Genres-ViewMore';
 import TopTracks from './pages/TopTracks';
+import Downloads from './pages/Downloads';
+import History from './pages/History';
+import Favorites from './pages/Favorites';
 
 const App = () => {
   return (
@@ -16,6 +19,9 @@ const App = () => {
           <Route path="/genres" element={<Genres />} />
           <Route path="/genres/view-more" element={<GenresViewMore />} />
           <Route path="/top-tracks" element={<TopTracks />} />
+          <Route path="/downloads" element={<Downloads />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </RootLayout>
     </Router>
