@@ -4,7 +4,7 @@ import { IoLanguage } from 'react-icons/io5';
 
 const Header = ({ setOpenPopup, openPopup, setFormOpenIs }) => {
   return (
-    <header className="w-[calc(100%-80px)] h-[80px] bg-secondary fixed top-0 right-0 px-9 flex justify-between items-center text-white z-[998]">
+    <header className="w-[calc(100%-80px)] h-[80px] bg-secondary fixed top-0 right-0 px-9 flex justify-between items-center text-white z-[997]">
       <div className="flex items-center gap-9 w-8/12">
         <form className="flex rounded-md bg-white">
           <input

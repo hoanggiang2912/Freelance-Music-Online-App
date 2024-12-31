@@ -53,7 +53,8 @@ body {
 
 .slick-slide {
   margin-right: 30px;
-  /* width: 175px !important; */
+  /* width: 175px !important;
+  flex-shrink: 0; */
 }
 
 .slick-arrow.slick-prev {

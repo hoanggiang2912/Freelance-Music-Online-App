@@ -97,7 +97,7 @@ const App = () => {
   };
   return (
     <div
-      className={`h-screen fixed left-0 top-0 z-30 bg-secondary ${
+      className={`h-screen fixed left-0 top-0 z-[998] bg-secondary ${
         collapsed ? 'w-20 sidebar-collapsed' : 'w-64'
       } transition-all duration-300 drop-shadow-sidebar sidebar-wrapper`}
     >
