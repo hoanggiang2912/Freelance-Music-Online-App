@@ -48,10 +48,12 @@ body {
 .slick-track {
   display: flex !important;
   align-items: center !important;
+  /* gap: 30px !important; */
 }
 
 .slick-slide {
   margin-right: 30px;
+  /* width: 175px !important; */
 }
 
 .slick-arrow.slick-prev {
