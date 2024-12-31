@@ -1,11 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Josefin Sans", serif;
+  font-family: 'Josefin Sans', serif;
 }
+
+.font-sans {
+  font-family: 'Josefin Sans', serif;
+}
+
+/* slick custom */
+.slick-track {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.slick-slide {
+  margin-right: 30px;
+}
+
+.slick-arrow.slick-prev {
+  left: -20px;
+}
+
+.slick-arrow.slick-next {
+  right: -20px;
+}
+
+/* Custom Scrollbar */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -21,4 +46,10 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #1b2039;
+}
+
+/* utilities */
+.line-track {
+  border: 2px solid #252b4dbf;
+  box-shadow: 0px 0px 10px 0px #161a2d45;
 }
