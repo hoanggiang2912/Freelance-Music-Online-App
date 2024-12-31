@@ -382,8 +382,16 @@ function RootLayout({ children }) {
         className={`popupLoginRegister ${
           openPopup ? '' : 'loginRegisteContainerHidden'
         } w-full h-full bg-[#0C0E1ACC] fixed top-0 left-0 z-20 flex justify-center items-center`}
+        onClick={() => {
+          setOpenPopup(false);
+        }}
       >
-        <div className="w-[1280px] rounded-3xl bg-lightBlue p-20 flex items-center gap-[72px] relative">
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className="w-[1280px] rounded-3xl bg-lightBlue p-20 flex items-center gap-[72px] relative"
+        >
           <IoCloseSharp
             onClick={() => {
               setOpenPopup(false);
