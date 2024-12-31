@@ -1,4 +1,5 @@
 import React from 'react';
+import PrimaryButton from '../components/PrimaryButton';
 
 const Footer = () => {
   return (
@@ -82,9 +83,9 @@ const Footer = () => {
                 type="email"
                 placeholder="Enter Your Email"
               />
-              <button className="capitalize w-fit bg-lightBlue py-3 px-5 rounded-[20px]">
-                sign me up
-              </button>
+              <PrimaryButton className="w-fit capitalize">
+                Sign me up
+              </PrimaryButton>
             </form>
           </div>
           {/* item */}

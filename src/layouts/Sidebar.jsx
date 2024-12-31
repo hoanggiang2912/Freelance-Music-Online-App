@@ -2,6 +2,7 @@ import { ContainerOutlined, DesktopOutlined } from '@ant-design/icons';
 import { Button, Menu, Space } from 'antd';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import DiscoverIcon from '../components/icons/DiscoverIcon';
 import AlbumsIcon from '../components/icons/AlbumsIcon';
 import ArtistsIcon from '../components/icons/ArtistsIcon';
@@ -11,51 +12,56 @@ import Logo from './Logo';
 import DownloadsIcon from '../components/icons/DownloadsIcon';
 import FavoritesIcon from '../components/icons/FavoritesIcon';
 import HistoryIcon from '../components/icons/HistoryIcon';
-import { Link } from 'react-router-dom';
 
 const topItems = [
   {
-    key: 'discover',
+    key: '/',
     icon: (
-      <div className="w-6 h-6 flex items-center justify-center">
+      <Link to="/" className="w-6 h-6 flex items-center justify-center">
         <DiscoverIcon />
-      </div>
+      </Link>
     ),
-    label: <Link to="/discover">Discover</Link>,
+    label: <Link to="/">Discover</Link>,
   },
   {
-    key: 'albums',
+    key: '/albums',
     icon: (
-      <div className="w-6 h-6 flex items-center justify-center">
+      <Link to={'/albums'} className="w-6 h-6 flex items-center justify-center">
         <AlbumsIcon />
-      </div>
+      </Link>
     ),
     label: <Link to="/albums">Albums</Link>,
   },
   {
-    key: 'artists',
+    key: '/artists',
     icon: (
-      <div className="w-6 h-6 flex items-center justify-center">
+      <Link
+        to={'/artists'}
+        className="w-6 h-6 flex items-center justify-center"
+      >
         <ArtistsIcon />
-      </div>
+      </Link>
     ),
     label: <Link to="/artists">Artists</Link>,
   },
   {
-    key: 'genres',
+    key: '/genres',
     icon: (
-      <div className="w-6 h-6 flex items-center justify-center">
+      <Link to={'/genres'} className="w-6 h-6 flex items-center justify-center">
         <GenresIcon />
-      </div>
+      </Link>
     ),
     label: <Link to="/genres">Genres</Link>,
   },
   {
-    key: 'topTracks',
+    key: '/top-tracks',
     icon: (
-      <div className="w-6 h-6 flex items-center justify-center">
+      <Link
+        to={'/top-tracks'}
+        className="w-6 h-6 flex items-center justify-center"
+      >
         <TopTracksIcons />
-      </div>
+      </Link>
     ),
     label: <Link to="/top-tracks">Top Tracks</Link>,
   },
@@ -63,42 +69,54 @@ const topItems = [
 
 const bottomItems = [
   {
-    key: 'downloads',
+    key: '/downloads',
     icon: (
-      <div className="w-6 h-6 flex items-center justify-center">
+      <Link
+        to={'/downloads'}
+        className="w-6 h-6 flex items-center justify-center"
+      >
         <DownloadsIcon />
-      </div>
+      </Link>
     ),
     label: <Link to="/downloads">Downloads</Link>,
   },
   {
-    key: 'favourites',
+    key: '/favorites',
     icon: (
-      <div className="w-6 h-6 flex items-center justify-center">
+      <Link
+        to={'/favorites'}
+        className="w-6 h-6 flex items-center justify-center"
+      >
         <FavoritesIcon />
-      </div>
+      </Link>
     ),
     label: <Link to="/favorites">Favourites</Link>,
   },
   {
-    key: 'history',
+    key: '/history',
     icon: (
-      <div className="w-6 h-6 flex items-center justify-center">
+      <Link
+        to={'/history'}
+        className="w-6 h-6 flex items-center justify-center"
+      >
         <HistoryIcon />
-      </div>
+      </Link>
     ),
     label: <Link to="/history">History</Link>,
   },
 ];
 
-const App = () => {
+const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(true);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
+
+  const location = useLocation();
+
   return (
     <div
-      className={`h-screen fixed left-0 top-0 z-30 bg-secondary ${
+      className={`h-screen fixed left-0 top-0 z-50 bg-secondary ${
         collapsed ? 'w-20 sidebar-collapsed' : 'w-64'
       } transition-all duration-300 drop-shadow-sidebar sidebar-wrapper`}
     >
@@ -117,6 +135,7 @@ const App = () => {
         mode="inline"
         theme="dark"
         inlineCollapsed={collapsed}
+        selectedKeys={[location.pathname]}
         items={topItems}
         className="py-10 bg-secondary"
       />
@@ -125,10 +144,12 @@ const App = () => {
         mode="inline"
         theme="dark"
         inlineCollapsed={collapsed}
+        selectedKeys={[location.pathname]}
         items={bottomItems}
         className="py-10 bg-secondary"
       />
     </div>
   );
 };
-export default App;
+
+export default Sidebar;

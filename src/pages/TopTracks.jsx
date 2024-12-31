@@ -11,7 +11,7 @@ function TopTracks() {
       <Main title={'Weekly Top 15'} viewMore={false}>
         <div className="columns-3 gap-10">
           {[...Array(15).keys()].map((i) => (
-            <Song key={i} />
+            <Song key={i} index={i} />
           ))}
         </div>
       </Main>

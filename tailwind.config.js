@@ -15,6 +15,8 @@ export default {
           'linear-gradient(0deg, #14182A 0%, #343E69 0%, rgba(32, 167, 196, 0) 100%)',
         borderLinear:
           'linear-gradient(270deg, #252B4D 0%, #252B4D 50%, #161A2D 100%);',
+        'custom-gradient':
+          'linear-gradient(0deg, #14182A 0%, #343E69 0%, rgba(32, 167, 196, 0) 100%)',
       },
       width: {
         widthDesktop: '1200px',
@@ -25,10 +27,6 @@ export default {
       },
       dropShadow: {
         sidebar: '0px 0px 24px 6px #04040433',
-      },
-      backgroundImage: {
-        "custom-gradient":
-          "linear-gradient(0deg, #14182A 0%, #343E69 0%, rgba(32, 167, 196, 0) 100%)",
       },
     },
   },

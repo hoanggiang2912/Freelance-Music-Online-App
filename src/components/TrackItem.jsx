@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function TrackItem({ item }) {
   return (
-    <div className="font-sans">
+    <Link to="" className="font-sans">
       <div className="mr-5 w-full h-full">
         <img
           src={item.image}
@@ -12,6 +13,6 @@ export default function TrackItem({ item }) {
         <h3 className="text-white py-5">{item.title}</h3>
         <p className="text-white">{item.singers.join(' & ')}</p>
       </div>
-    </div>
+    </Link>
   );
 }
